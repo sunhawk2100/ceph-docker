@@ -117,6 +117,9 @@ case "$CEPH_DAEMON" in
     source start_mgr.sh
     start_mgr
     ;;
+  disk_introspection)
+    source disk_introspection.sh
+    ;;
   *)
     invalid_ceph_daemon
   ;;
