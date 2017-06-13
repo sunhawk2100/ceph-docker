@@ -11,6 +11,7 @@ for option in $(comma_to_space ${DEBUG}); do
   case $option in
     verbose)
       echo "VERBOSE: activating bash debugging mode."
+      export PS4='+${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
       set -x
       ;;
     fstree*)
