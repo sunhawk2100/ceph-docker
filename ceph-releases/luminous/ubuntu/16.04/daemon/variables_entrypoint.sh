@@ -62,7 +62,7 @@ ALL_SCENARIOS="populate_kvstore mon osd osd_directory osd_directory_single osd_c
 CLI_OPTS="--cluster ${CLUSTER}"
 
 # This is ONLY used for the daemon's startup, e.g: ceph-osd $DAEMON_OPTS
-DAEMON_OPTS="--cluster ${CLUSTER} --setuser ceph --setgroup ceph -d"
+DAEMON_OPTS="--cluster ${CLUSTER} --setuser ceph --setgroup ceph --debug_ms ${DEBUG_MS:=1} -d"
 
 MOUNT_OPTS="-t xfs -o noatime,inode64"
 ETCDCTL_OPTS="--peers ${KV_IP}:${KV_PORT}"

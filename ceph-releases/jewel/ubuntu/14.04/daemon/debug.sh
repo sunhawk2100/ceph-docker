@@ -11,6 +11,8 @@ for option in $(comma_to_space ${DEBUG}); do
   case $option in
     verbose)
       echo "VERBOSE: activating bash debugging mode."
+      DEBUG_MS=20
+      echo "VERBOSE: Ceph daemons now run in debugging level $DEBUG_MS"
       export PS4='+${BASH_SOURCE}:${LINENO}: ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
       set -x
       ;;
