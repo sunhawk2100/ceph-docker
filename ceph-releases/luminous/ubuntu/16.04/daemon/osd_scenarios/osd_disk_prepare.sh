@@ -63,7 +63,7 @@ function osd_disk_prepare {
     # Ceph bug tracker: http://tracker.ceph.com/issues/18944
     DATA_UUID=$(get_part_uuid ${OSD_DEVICE}1)
     umount /var/lib/ceph/osd-lockbox/${DATA_UUID} || true
-  else
+  elif [[ ${OSD_FILESTORE} -eq 1 ]]; then
     ceph-disk -v prepare ${CLI_OPTS} --journal-uuid ${OSD_JOURNAL_UUID} ${OSD_DEVICE} ${OSD_JOURNAL}
   fi
 
